@@ -4,33 +4,46 @@ using UnityEngine;
 
 public class Core : MonoBehaviour
 {
+    #region Ailments
+
     public enum AilmentType
     {
         Bleed,
         Poison,
         Burn
     }
-    public enum DamageType
+
+    public class Ailment
     {
-        Fire, // Elemental damage
-        Cold, // Elemental damage
-        Lightning, // Elemental damage
-        Physical,
-        Arcane
+        AilmentType ailmentType;
+        int duration;
+        float damagePerSecond;
+
+        public Ailment(AilmentType ailmentType, int duration, float damagePerSecond)
+        {
+            this.ailmentType = ailmentType;
+            this.duration = duration;
+            this.damagePerSecond = damagePerSecond;
+        }
     }
+
+    #endregion
+
+    #region Item Types
+
     public enum WeaponType
     {
-        One Hand Sword,
-        Two Hand Sword,
-        One Hand Axe,
-        Two Hand Axe,
-        One Hand Mace,
-        Two Hand Mace,
+        OneHandSword,
+        TwoHandSword,
+        OneHandAxe,
+        TwoHandAxe,
+        OneHandMace,
+        TwoHandMace,
         Sceptre, // 1H
         Polearm, // 2H
         Bow,
         Crossbow,
-        Hand Crossbow,
+        HandCrossbow,
         Dagger, //1H
         Staff, // 2H
         Wand //1H
@@ -46,7 +59,7 @@ public class Core : MonoBehaviour
     public enum ArmorType
     {
         Helmet,
-        Body Armor,
+        BodyArmor,
         Glove,
         Belt,
         Boot
@@ -55,6 +68,19 @@ public class Core : MonoBehaviour
     public enum JewelryType
     {
         Ring,
-        Amulet,
+        Amulet
     }
+
+    #endregion
+
+    public enum DamageType
+    {
+        Fire, // Elemental damage
+        Cold, // Elemental damage
+        Lightning, // Elemental damage
+        Physical,
+        Arcane
+    }
+
+
 }
